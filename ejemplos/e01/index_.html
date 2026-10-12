@@ -90,7 +90,42 @@
                 <dd>Aficionado al ciclismo de montaña (downhill y enduro), el armado de computadoras, los videojuegos y los autos deportivos.</dd>
             </dl>
         </section>
-        
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Puedes enviarme un mensaje directamente utilizando el siguiente formulario:</p>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Formulario de Contacto</legend>
+
+                    <div>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+                    </div>
+
+                    <div>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required placeholder="ejemplo@dominio.com">
+                    </div>
+
+                    <div>
+                        <label for="asunto">Asunto:</label>
+                        <select id="asunto" name="asunto">
+                            <option value="academico">Consulta Académica</option>
+                            <option value="colaboracion">Colaboración / Proyecto</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+
+                    <button type="submit">Enviar Mensaje</button>
+                </fieldset>
+            </form>
+        </section>
     </main>
  </body>
  </html>
