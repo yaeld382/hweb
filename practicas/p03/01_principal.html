@@ -3,17 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guacamole (clásico)</title>
+  <!-- CAMBIO 7: se agregó meta description y un <title> descriptivo; los buscadores y las pestañas del navegador muestran qué contiene la página -->
+  <meta name="description" content="Receta clásica de guacamole del blog de MasterChef.">
+  <title>Guacamole (clásico) | Blog de MasterChef</title>
 </head>
 <body>
-  <!-- Lista ordenada para pasos -->
   <!--
     EJERCICIO 1 - Elementos usados y por qué:
+    <header>     : encabezado del sitio (nombre del blog).
+    <main>       : contenido principal de la página; solo hay uno.
     <article>    : contenido independiente y completo (la receta del blog).
     <section>    : agrupa una parte temática dentro del artículo (Ingredientes, Instrucciones).
-    <h1>         : encabezado principal; solo hay uno, el título de la receta.
-    <h2>         : encabezados de sección (Ingredientes, Instrucciones).
-    <h3>-<h6>    : no se usan, porque la receta solo tiene dos niveles de jerarquía.
+    <h1>         : encabezado principal de la página (nombre del blog).
+    <h2>         : título del artículo (la receta).
+    <h3>         : títulos de sección (Ingredientes, Instrucciones).
+    <h4>-<h6>    : no se usan, la receta no tiene más niveles de jerarquía.
     <p>          : párrafos de texto corrido.
     <blockquote> : cita textual larga, la frase introductoria del guacamole.
     <ul>/<li>    : lista desordenada, los ingredientes no tienen un orden obligatorio.
@@ -22,56 +26,63 @@
     <pre>        : texto preformateado que respeta espacios y saltos; no se usa porque el texto no necesita formato fijo.
     <figure>/<figcaption>: imagen con pie de foto; no se usa porque la receta no incluye imágenes.
   -->
-  <article>
-    <!-- h1: título principal de la receta -->
-    <h1>Guacamole (clásico)</h1>
+  <!-- CAMBIO 1: se agregó <header> con un <h1> que nombra el sitio; define el encabezado de la página y da un único h1 -->
+  <header>
+    <h1>Blog de MasterChef</h1>
+  </header>
+  <!-- CAMBIO 1: <main> envuelve el contenido principal; los lectores de pantalla pueden saltar directo a él -->
+  <main>
+    <!-- CAMBIO 2: aria-labelledby enlaza el artículo con su título (id); los lectores de pantalla lo anuncian por su nombre -->
+    <article aria-labelledby="titulo-guacamole">
+      <!-- CAMBIO 1: el título de la receta pasó de h1 a h2, porque ahora el h1 es el nombre del blog; así la jerarquía no salta niveles -->
+      <h2 id="titulo-guacamole">Guacamole (clásico)</h2>
 
-    <!-- blockquote: cita textual con la que abre la receta -->
-    <blockquote>
-      "Existe un condimento que no puede faltar en toda mesa mexicana. Algunos lo consideran una salsa, otros un aderezo, algunos incluso le llaman ensalada, otros simplemente le llaman por su nombre propio: Guacamole."
-    </blockquote>
+      <!-- CAMBIO 3: el texto de la cita ahora va dentro de <p>; blockquote debe contener contenido de bloque, no texto suelto -->
+      <blockquote>
+        <p>"Existe un condimento que no puede faltar en toda mesa mexicana. Algunos lo consideran una salsa, otros un aderezo, algunos incluso le llaman ensalada, otros simplemente le llaman por su nombre propio: Guacamole."</p>
+      </blockquote>
 
-    <!-- p: párrafo introductorio -->
-    <p>Aunque el guacamole se prepara de diferentes formas según la zona de la que provenga la receta, la base suele ser la misma. Aquí te mostramos una receta muy completa para preparar esta conocida salsa mexicana:</p>
+      <!-- p: párrafo introductorio -->
+      <p>Aunque el guacamole se prepara de diferentes formas según la zona de la que provenga la receta, la base suele ser la misma. Aquí te mostramos una receta muy completa para preparar esta conocida salsa mexicana:</p>
 
-    <!-- section: sección de ingredientes -->
-    <section>
-      <!-- h2: encabezado de la sección -->
-      <h2>Ingredientes</h2>
+      <!-- section: sección de ingredientes (h3 por jerarquía bajo el h2 del artículo) -->
+      <section aria-labelledby="ingredientes">
+        <h3 id="ingredientes">Ingredientes</h3>
 
-      <!-- ul: lista desordenada, el orden de los ingredientes no importa -->
-      <ul>
-        <li>4 o 5 aguacates maduros</li>
-        <li>1 cebolla mediana (normal)</li>
-        <li>1 tomate mediano</li>
-        <li>1 chile serrano (o un jalapeño en conserva)</li>
-        <li>Zumo de 1/2 lima o limón</li>
-        <li>1 manojo de cilantro fresco</li>
-        <li>Sal</li>
-      </ul>
-    </section>
+        <!-- ul: lista desordenada, el orden de los ingredientes no importa -->
+        <ul>
+          <li>4 o 5 aguacates maduros</li>
+          <li>1 cebolla mediana (normal)</li>
+          <li>1 tomate mediano</li>
+          <li>1 chile serrano (o un jalapeño en conserva)</li>
+          <li>Zumo de 1/2 lima o limón</li>
+          <li>1 manojo de cilantro fresco</li>
+          <li>Sal</li>
+        </ul>
+      </section>
 
-    <!-- section: sección de instrucciones -->
-    <section>
-      <h2>Instrucciones</h2>
+      <!-- section: sección de instrucciones -->
+      <section aria-labelledby="instrucciones">
+        <h3 id="instrucciones">Instrucciones</h3>
 
-      <!-- ol: lista ordenada, los pasos se siguen en secuencia -->
-      <ol>
-        <li>Lavar bien el tomate y el manojo de cilantro</li>
-        <li>Pelar la cebolla y quitarle la capa exterior</li>
-        <li>Trozar la cebolla y el tomate en trozos muy pequeños</li>
-        <li>Picar las hojas de cilantro lo más fino posible, desechando los tallos</li>
-        <li>Poner todos los ingredientes en un recipiente, preferentemente un molcajete</li>
-        <li>Cortar por la mitad los aguacates, retirando el hueso</li>
-        <li>Sacar toda la pulpa posible de los aguacates y ponerla en el molcajete</li>
-        <li>Añadir el zumo de 1/2 lima con una pizca de sal</li>
-        <li>Añadir un chile serrano muy bien picadito</li>
-        <li>Machacar todos los ingredientes en el molcajete</li>
-      </ol>
+        <!-- ol: lista ordenada, los pasos se siguen en secuencia -->
+        <ol>
+          <li>Lavar bien el tomate y el manojo de cilantro</li>
+          <li>Pelar la cebolla y quitarle la capa exterior</li>
+          <li>Trozar la cebolla y el tomate en trozos muy pequeños</li>
+          <li>Picar las hojas de cilantro lo más fino posible, desechando los tallos</li>
+          <li>Poner todos los ingredientes en un recipiente, preferentemente un molcajete</li>
+          <li>Cortar por la mitad los aguacates, retirando el hueso</li>
+          <li>Sacar toda la pulpa posible de los aguacates y ponerla en el molcajete</li>
+          <li>Añadir el zumo de 1/2 lima con una pizca de sal</li>
+          <li>Añadir un chile serrano muy bien picadito</li>
+          <li>Machacar todos los ingredientes en el molcajete</li>
+        </ol>
 
-      <!-- p: nota final con la alternativa al molcajete -->
-      <p>En caso de no contar con un molcajete, se puede utilizar un tenedor procurando que la pulpa del aguacate se mezcle con los demás ingredientes. Debe quedarnos un guacamole con los trozos visibles, pero opcionalmente puede pasarse por la batidora para dejarlo más cremoso y con una textura más uniforme.</p>
-    </section>
-  </article>
+        <!-- p: nota final con la alternativa al molcajete -->
+        <p>En caso de no contar con un molcajete, se puede utilizar un tenedor procurando que la pulpa del aguacate se mezcle con los demás ingredientes. Debe quedarnos un guacamole con los trozos visibles, pero opcionalmente puede pasarse por la batidora para dejarlo más cremoso y con una textura más uniforme.</p>
+      </section>
+    </article>
+  </main>
 </body>
 </html>
