@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+  ELEMENTOS DE ORGANIZACIÓN DEL CONTENIDO
+
+  article: representa una unidad de contenido independiente y completa que
+  tendría sentido por sí sola (una publicación de blog, una noticia, un
+  comentario). Aquí cada publicación del blog es un article.
+
+  section: agrupa contenido relacionado temáticamente dentro de un documento
+  o artículo, normalmente con su propio encabezado. Aquí divide el menú en
+  "Aperitivos" y "Platillos principales".
+
+  div: contenedor genérico de bloque, sin significado semántico. Se usa para
+  agrupar elementos cuando ningún elemento semántico es adecuado, por ejemplo
+  para aplicar estilos o para referenciarlo con un id o class.
+
+  span: contenedor genérico en línea, sin significado semántico. Sirve para
+  marcar un fragmento de texto dentro de una línea (por ejemplo un precio)
+  para darle estilo o clasificarlo sin romper el flujo del texto.
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Master-Chef Geek: Blog</title>
+</head>
+<body>
+
+  <header>
+    <h1>Blog del Master-Chef Geek</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Menú</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <article>
+    <header>
+      <h2>Menú de Otoño</h2>
+      <!--
+        time: marca una fecha u hora de forma que sea legible por las máquinas.
+        datetime: contiene la fecha en formato estándar AAAA-MM-DD, aunque el
+        texto visible esté escrito de otra forma.
+        pubdate: indica que esa fecha es la de publicación del artículo.
+      -->
+      <p>publicado por NEOJC, <time datetime="2019-08-11" pubdate>11 de agosto de 2019</time></p>
+    </header>
+
+    <p>Nuestro chef ha estado ocupado armando el menú completo para los meses de invierno. Prepárense para probar estos aperitivos y platillos principales para estos largos meses.</p>
+
+    <section id="aperitivos">
+      <h3>Aperitivos</h3>
+      <dl>
+        <dt>Zurrón de frijol negro</dt>
+        <dd>Frijoles negros, picante y una mezcla de quesos mexicanos envueltos en láminas de masa de maíz prieto, horneados hasta que estén dorados. <span class="precio">$79.00</span></dd>
+
+        <dt class="nuevoarticulo">Napoleones del suroeste con cangrejo &mdash; <strong>¡nueva entrada!</strong></dt>
+        <dd>Capas de trozos ligeros de carne de cangrejo, frijol y salsa de maíz, y nuestras tortillas de harina hechas a mano. <span class="precio">$159.00</span></dd>
+      </dl>
+    </section>
+
+    <section id="platillosprincipales">
+      <h3>Platillos principales</h3>
+      <dl>
+        <dt>Brochetas de camarones adobados con salsa de cacahuate</dt>
+        <dd>Brochetas de camarón marinados con zumo de limón, ajo, y salsa de pescado, asados a la parrilla. Servidos con salsa picante de cacahuate y arroz jazmín. <span class="precio">$259.00</span></dd>
+
+        <dt class="nuevoarticulo">Pollo asado a las brasas con plátanos fritos &mdash; <strong>¡nuevo platillo!</strong></dt>
+        <dd>Pollo de rancho asado a fuego lento, condimentado con salsa picante y salsa Jerk, y servido con tostones de plátanos fritos y mango fresco. <span class="precio">$249.00</span></dd>
+      </dl>
+    </section>
+  </article>
+
+  <article>
+    <header>
+      <h2>Bajito y Despacito</h2>
+      <p>publicado por MasterChef, <time datetime="2018-11-15" pubdate>November 15, 2018</time></p>
+    </header>
+
+    <p>Esta semana estamos extremadamente emocionados por presentar una nueva técnica de cocina llamada sous vide. Con la técnica sous vide, tú sumerges un recipiente (generalmente de plástico sellado al vacío) en un baño de agua que precisamente se adapta a la temperatura requerida para que la comida sea cocinada. En este programa, Cocina para Geeks, Jaime Potter describe la técnica como poción mágica a temperatura ultra baja.</p>
+
+    <p>La siguiente semana, prepararemos Salmon Sous Vide con Eneldo Holandés. Para asistir al programa, contáctanos antes del 30 de Noviembre.</p>
+  </article>
+
+  <footer>
+    <div id="acerca">
+      <p>Ubicación:<br>
+      La esquina del sabor, Puebla, México.</p>
+
+      <p>Horario:<br>
+      Jueves a Sábado, desde <time datetime="11:00">11:00 am</time> hasta <time datetime="00:00">media noche</time>.</p>
+    </div>
+
+    <p><small>2019 copyright &copy; Grupo Marter-Chef, Derechos reservados</small></p>
+  </footer>
+
+</body>
+</html>
